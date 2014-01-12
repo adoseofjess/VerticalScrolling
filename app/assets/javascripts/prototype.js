@@ -13,7 +13,6 @@ window.Prototype = {
         Backbone.history.start();
       }
     });
-    
   }
 };
 
