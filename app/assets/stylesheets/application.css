@@ -11,3 +11,75 @@
  *= require_self
  *= require_tree .
  */
+
+html, body {
+/*  background-color: red;*/
+}
+
+header {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: block;
+  background: rgb(235, 235, 235);
+}
+
+.content-container {
+  height: 80%;
+  width: 100%;
+  display: block;
+  position: fixed;
+  top: 10%;
+  left: 0%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 20%;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  margin-left: 5%;
+}
+
+.view {
+  height: 100%;
+  width: 70%;
+  background: red;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  float: right;
+  margin-right: 5%;
+}
+
+.course-title-show {
+  height: 5%;
+  width: 100%;
+  background: red;
+}
+
+.lesson-title-show {
+  height: 95%;
+  width: 100%;
+}
+
+.sublesson-title-show {
+  
+}
+
+.content-show {
+  
+}
+
+footer {
+  height: 10%;
+  width: 100%;
+  position: fixed;
+  top: 90%;
+  left: 0%;
+  background: rgb(235, 235, 235);
+}

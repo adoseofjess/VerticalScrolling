@@ -4,7 +4,16 @@ window.Prototype = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    console.log("hi");
+    Prototype.courses = new Prototype.Collections.Courses();
+    Prototype.courses.fetch({
+      success: function() {
+        alert("pulled down");
+        new Prototype.Routers.PrototypeRouter($(""));
+        Backbone.history.start();
+      }
+    });
+    
   }
 };
 
