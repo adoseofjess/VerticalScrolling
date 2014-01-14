@@ -2,14 +2,14 @@
 <link rel="shortcut icon" href="/versal-favicon.ico" />
 </head>
 <script type="application/json" id="bootstrapped_course_json">
-  <%=@courses.to_json.html_safe %>
+  <%= @courses.to_json.html_safe %>
 </script>
 <script type="application/json" id="bootstrapped_current_user_json">
   <%= current_user.to_json.html_safe %>
 </script>
 <div class="container">
 <header>
-  <div class="versal-logo">versal</div>
+  <div class="versal-logo">versal </div>
   <div class="user-log-in">
     <% if !current_user.nil? %>
       <ul>
@@ -48,9 +48,13 @@
 
 <div class="content-container">
   <div class="sidebar">
+    <div class="course-title-show"></div>
+    <div class="lesson-title-show"></div>
   </div>
   <div class="view">
+    <div class="sublesson-title-show"></div>
+    <div class="content-show"></div>
   </div>
 </div>
-<footer></footer>
+<footer>© 2014 Jessica J. Kim</footer>
 </div>

@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.create(username: "guest", password: "helloworld")
+
 Course.create(title: "The Guide to Wine for Beginners", description: "Wine is more than just a drink; it’s a lifestyle, a survey into history, a gastronomic adventure, a study in farming and a way to explore different cultures. But with so many different angles to approach wine, how do you get started?
 Fortunately, there are only a few basic techniques to learn as well as some common wine knowledge. With a little practice you will be over the hump of being a rudimentary wine ‘dabbler’ to becoming an upstanding wino, capable of ordering wine like a pro. The wine for beginners course has the answers to your questions.")
 
@@ -37,7 +39,42 @@ Answer.create(question_id: 1, body: "right location")
 Question.create(quiz_id: 1, body: "What is clarification?")
 
 Answer.create(question_id: 2, body: "filtering the wine product")
-Answer.create(question_id: 2, body: "using egg whites to bind some of the wine particles together")
+Answer.create(question_id: 2, body: "using egg whites to bind some of the wine particles together", correct: true)
 Answer.create(question_id: 2, body: "heating the finished wine product")
 Answer.create(question_id: 2, body: "changing the coloring of the wine")
 
+Lesson.create(title: "The Tasting Process", locked: true, course_id: 1, introduction: "How to taste wine seems simple enough - let us show you how to get the most out of every sip! There are four parts to the tasting process – viewing, agitating, smelling and tasting. I’m assuming you have a clean, clear glass with which you can easily swirl the wine. It’s also nice to have a glass with a stem that makes the glass comfortable to hold, you do not want to touch the glass much as the heat from your hands will transfer to the wine.")
+
+Sublesson.create(title: "View", body: "The first part of the process involves using your eyes. Simply hold the glass at an angle against a white background. If you are viewing a red wine then you should be seeing a vibrant and clear color. For whites you should be seeing a lucid and clear color. If you see any cloudiness or discoloration (brownish, grayish) then this could be indicative of a wine defect.", lesson_id: 2)
+
+Sublesson.create(title: "Swirl", body: "The action of swirling the wine causes the wine to become agitated by oxygen, releasing several aromas present in the wine. If your wine is young then you want to agitate it more, but if it’s a bit aged then you want to agitate it delicately.", lesson_id: 2)
+
+Sublesson.create(title: "Smell", body: "This is one of my favorite parts. Bury your nose into the glass - as much as possible without getting it wet! – and take a nice long whiff. Now take a moment and let your olfactory work. You should be able to identify a few of the aromas, but if you don’t then don’t hesitate to repeat the process. Don’t be shy about it either, let yourself identify what you sense as an aroma and have fun with it! Younger and bolder wines will have strong aromas, while older wines will be less obtrusive and subtle.", lesson_id: 2)
+
+Sublesson.create(title: "Taste", body: "Now let’s get down to business. Take a nice sip of the wine, filling your mouth about half full, and swish it around. Multiple things happen at this point. First, your olfactory is working again, getting those same aromas from the smelling process and more. Second, your palate is gaining a full impression of the wine. Third, you’re considering whether to spit or swallow. I like to swallow (stay focused!). If you decide to swallow then pay attention to how it feels when the wine goes down your throat. If you feel it as warm then the alcohol content is high in this wine. Some wines have significantly higher levels of alcohol such as Zinfandel, or even more so, Port. The wine should be full of flavor, represented by all elements of wine – fruit, tannin, and acid – in balance and should be void of unpleasant tastes, which we’ll discuss later.
+
+Another option you have while going through this process is using a tasting note to aid you and to help for remembering later what you thought about a particular wine.", lesson_id: 2)
+
+Sublesson.create(title: "Wine Defects", body: "Defective wines come from problems in winemaking or storage. The most common defect is corked wine. This occurs when mold in the cork contaminates the wine. This doesn’t happen as often as it used to since producers now have advanced technology. However, it is said that 3 out of every 100 bottles is corked. The true tell tale sign of a corked wine is the unmistakable smell of wet cardboard.
+
+Another defect that can occur is oxidization. Exposing wine to air for too long will oxidize the wine, making it lose its original bright color - making it brownish and dull - and leaving it tasting like a sour apple.
+
+Vinegary wine is also a possibility. If you come across this do not bother tasting this wine, just toss it out.
+
+One last thing you should be aware of when drinking wine is sulfur. Sulfur is present in wine in small amounts as it is used in winemaking as a sterilizing agent and antioxidant. A small percentage of the population is allergic to sulfur; if you are one of those, then you should probably not drink wine.", lesson_id: 2)
+
+Quiz.create(lesson_id: 2)
+
+Question.create(quiz_id: 2, body: "The first part of the process involves using what?")
+
+Answer.create(question_id: 1, body: "your eyes", correct: true)
+Answer.create(question_id: 1, body: "your hands")
+Answer.create(question_id: 1, body: "your mouth")
+Answer.create(question_id: 1, body: "your nose")
+
+Question.create(quiz_id: 1, body: "What is the most common defect for wine?")
+
+Answer.create(question_id: 2, body: "overheated wine")
+Answer.create(question_id: 2, body: "corked wine", correct: true)
+Answer.create(question_id: 2, body: "too old")
+Answer.create(question_id: 2, body: "wrong type of grapes")

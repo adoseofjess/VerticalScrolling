@@ -1,0 +1,4 @@
+<% lesson.sublessons().forEach(function(sublesson) { %>
+  <%= sublesson.escape("title") %><br><br>
+  <%= sublesson.escape("body") %><br><br>
+<% }) %>

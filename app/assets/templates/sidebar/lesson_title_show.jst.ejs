@@ -1,0 +1,12 @@
+<% lessons.forEach(function(lesson) { %>
+  <% if (lesson.escape("locked") == "false") { %>
+    <div class="lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a><br><br></div>
+    <% lesson.sublessons().forEach(function(sublesson) { %>
+      <div class="sublesson-title" data-id="<%= sublesson.id %>"><%= sublesson.escape("title") %><br><br></div>
+    <% }); %>
+  <% } %>
+
+  <% if (lesson.escape("locked") == "true") { %>
+    <div class="lesson-title"><a href=""><%= lesson.escape("title") %></a><br><br></div>
+  <% } %>
+<% }); %>

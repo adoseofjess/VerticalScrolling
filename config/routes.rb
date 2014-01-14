@@ -1,5 +1,5 @@
 Prototype::Application.routes.draw do
-  root :to => "static_pages#index"
+  root :to => "static_pages#root"
   
   resources :courses
   resources :lessons
@@ -7,4 +7,6 @@ Prototype::Application.routes.draw do
   resources :quizzes
   resources :questions
   resources :answers
+  resources :users
+  resource :session, :only => [:create, :destroy, :new]
 end

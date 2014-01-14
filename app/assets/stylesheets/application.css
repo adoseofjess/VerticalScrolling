@@ -26,6 +26,22 @@ header {
   background: rgb(235, 235, 235);
 }
 
+.versal-logo {
+  height: 100%;
+  width: 30%;
+  float: left;
+  background: red;
+  display: inline-block;
+}
+
+.user-log-in {
+  height: 100%;
+  width: 30%;
+  float: right;
+  background: blue;
+  display: inline-block;
+}
+
 .content-container {
   height: 80%;
   width: 100%;
@@ -62,17 +78,36 @@ header {
   background: red;
 }
 
+.course-title {
+  
+}
+
+.lesson-title {
+  font-size: .8em;
+}
+
+.sublesson-title {
+  font-size: .5em;
+}
+
 .lesson-title-show {
   height: 95%;
   width: 100%;
+  overflow: scroll;
 }
 
 .sublesson-title-show {
-  
+  height: 5%;
+  width: 100%;
+  background: transparent;
+  display: block;
 }
 
 .content-show {
-  
+  height: 95%;
+  width: 100%;
+  display: block;
+  overflow: scroll;
 }
 
 footer {
