@@ -7,7 +7,7 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
   
   events: {
     "click .lesson-title": "showLesson",
-    "click .sublesson-title": "showSublesson",
+    // "click .sublesson-title": "showSublesson",
   },
 
   render: function () {
@@ -21,26 +21,27 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
   
   showLesson: function (event) {
     event.preventDefault();
-    var sublessonTitleShowView = new Prototype.Views.SublessonTitleShow({
-      sublesson: Prototype.courses.first().lessons().first().sublessons().first(),
-    });
+    var lesson_id = parseInt($(event.currentTarget).attr("data-id"));
+    // var sublessonTitleShowView = new Prototype.Views.SublessonTitleShow({
+//       sublesson: Prototype.courses.first().lessons().first().sublessons().first(),
+//     });
     var contentShowView = new Prototype.Views.ContentShow({
-      sublesson: Prototype.courses.first().lessons().first().sublessons().first(),
+      lesson: Prototype.courses.first().lessons().where({id: lesson_id})[0],
     });
-    $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
-    $(".content-show").html(contentShowView.render().$el);
+    // $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
+    $(".view").html(contentShowView.render().$el);
   },
   
-  showSublesson: function (event) {
-    event.preventDefault();
-    var sublesson_id = parseInt($(event.currentTarget).attr("data-id"));
-    var sublessonTitleShowView = new Prototype.Views.SublessonTitleShow({
-      sublesson: Prototype.courses.first().lessons().first().sublessons().where({id: sublesson_id})[0],
-    });
-    var contentShowView = new Prototype.Views.ContentShow({
-      sublesson: Prototype.courses.first().lessons().first().sublessons().where({id: sublesson_id})[0],
-    });
-    $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
-    $(".content-show").html(contentShowView.render().$el);
-  }, 
+  // showSublesson: function (event) {
+//     event.preventDefault();
+//     var sublesson_id = parseInt($(event.currentTarget).attr("data-id"));
+//     var sublessonTitleShowView = new Prototype.Views.SublessonTitleShow({
+//       sublesson: Prototype.courses.first().lessons().first().sublessons().where({id: sublesson_id})[0],
+//     });
+//     var contentShowView = new Prototype.Views.ContentShow({
+//       sublesson: Prototype.courses.first().lessons().first().sublessons().where({id: sublesson_id})[0],
+//     });
+//     $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
+//     $(".content-show").html(contentShowView.render().$el);
+//   }, 
 });

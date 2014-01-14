@@ -7,6 +7,6 @@
   <% } %>
 
   <% if (lesson.escape("locked") == "true") { %>
-    <div class="lesson-title"><a href=""><%= lesson.escape("title") %></a><br><br></div>
+    <div class="lesson-title"><a href=""><%= lesson.escape("title") %> (locked)</a><br><br></div>
   <% } %>
 <% }); %>

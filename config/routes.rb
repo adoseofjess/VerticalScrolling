@@ -2,9 +2,11 @@ Prototype::Application.routes.draw do
   root :to => "static_pages#root"
   
   resources :courses
-  resources :lessons
+  resources :lessons do 
+    resources :quizzes, :only => [:index]
+  end
   resources :sublessons
-  resources :quizzes
+  # resources :quizzes
   resources :questions
   resources :answers
   resources :users

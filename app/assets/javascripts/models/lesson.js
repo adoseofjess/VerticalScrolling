@@ -1,6 +1,6 @@
 Prototype.Models.Lesson = Backbone.Model.extend({
   urlRoot: "/lessons",
-  
+
   sublessons: function() {
     if (!this._sublessons) {
       this._sublessons = new Prototype.Collections.Sublessons([], {lesson: this});
@@ -10,7 +10,6 @@ Prototype.Models.Lesson = Backbone.Model.extend({
   },
   
   quizzes: function() {
-    console.log("in quizzes")
     if (!this._quizzes) {
       this._quizzes = new Prototype.Collections.Quizzes([], 
 {lesson: this});
@@ -20,7 +19,6 @@ Prototype.Models.Lesson = Backbone.Model.extend({
   },
   
   parse: function (serverAttributes, options) {
-    console.log("in parse")
     this.sublessons().reset(serverAttributes.sublessons, {parse: true});
     delete serverAttributes.tasks;
     return serverAttributes;

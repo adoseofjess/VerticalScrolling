@@ -25,7 +25,7 @@ Prototype.Routers.PrototypeRouter = Backbone.Router.extend({
         $(".course-title-show").append(sidebarCourseTitleView.render().$el);
         $(".lesson-title-show").append(sidebarLessonTitleView.render().$el);
         // $(".sublesson-title-show").append(sublessonTitleShowView.render().$el);
-        $(".content-show").append(contentShowView.render().$el);
+        $(".view").html(contentShowView.render().$el);
   },
   
   showLesson: function() {

@@ -43,7 +43,7 @@ Answer.create(question_id: 2, body: "using egg whites to bind some of the wine p
 Answer.create(question_id: 2, body: "heating the finished wine product")
 Answer.create(question_id: 2, body: "changing the coloring of the wine")
 
-Lesson.create(title: "The Tasting Process", locked: true, course_id: 1, introduction: "How to taste wine seems simple enough - let us show you how to get the most out of every sip! There are four parts to the tasting process – viewing, agitating, smelling and tasting. I’m assuming you have a clean, clear glass with which you can easily swirl the wine. It’s also nice to have a glass with a stem that makes the glass comfortable to hold, you do not want to touch the glass much as the heat from your hands will transfer to the wine.")
+Lesson.create(title: "The Tasting Process", locked: false, course_id: 1, introduction: "How to taste wine seems simple enough - let us show you how to get the most out of every sip! There are four parts to the tasting process – viewing, agitating, smelling and tasting. I’m assuming you have a clean, clear glass with which you can easily swirl the wine. It’s also nice to have a glass with a stem that makes the glass comfortable to hold, you do not want to touch the glass much as the heat from your hands will transfer to the wine.")
 
 Sublesson.create(title: "View", body: "The first part of the process involves using your eyes. Simply hold the glass at an angle against a white background. If you are viewing a red wine then you should be seeing a vibrant and clear color. For whites you should be seeing a lucid and clear color. If you see any cloudiness or discoloration (brownish, grayish) then this could be indicative of a wine defect.", lesson_id: 2)
 
@@ -67,14 +67,41 @@ Quiz.create(lesson_id: 2)
 
 Question.create(quiz_id: 2, body: "The first part of the process involves using what?")
 
-Answer.create(question_id: 1, body: "your eyes", correct: true)
-Answer.create(question_id: 1, body: "your hands")
-Answer.create(question_id: 1, body: "your mouth")
-Answer.create(question_id: 1, body: "your nose")
+Answer.create(question_id: 3, body: "your eyes", correct: true)
+Answer.create(question_id: 3, body: "your hands")
+Answer.create(question_id: 3, body: "your mouth")
+Answer.create(question_id: 3, body: "your nose")
 
-Question.create(quiz_id: 1, body: "What is the most common defect for wine?")
+Question.create(quiz_id: 2, body: "What is the most common defect for wine?")
 
-Answer.create(question_id: 2, body: "overheated wine")
-Answer.create(question_id: 2, body: "corked wine", correct: true)
-Answer.create(question_id: 2, body: "too old")
-Answer.create(question_id: 2, body: "wrong type of grapes")
+Answer.create(question_id: 4, body: "overheated wine")
+Answer.create(question_id: 4, body: "corked wine", correct: true)
+Answer.create(question_id: 4, body: "too old")
+Answer.create(question_id: 4, body: "wrong type of grapes")
+
+Lesson.create(title: "Styles of Red Wine", locked: true, course_id: 1, introduction: "Although wine tasting is very much subjective, there are general tastes that can be commonly shared and understood. In the following section I will take you through some of the general concepts on red wine styles. Reds can range from great bold and tannic wines that require aging, to silky and smooth young wines. To easily differentiate between Red wine styles, we can separate them into four categories — Bordeaux, Burgundy, Juicy and Warm & Spicy.")
+
+Sublesson.create(title: "Bordeaux", body: "Bordeaux style wines are very popular and can be greatly diverse.  On one end of the spectrum you will find velvety Merlot-based wines and on the opposite end you will find bold Cabernet-based wines.  We can find these styles not only from France, but also from California and Australia.  The Merlot-based style can be matched with white meats and fish, while the Cabernet-based style is better matched with roasts, lamb or beef.", lesson_id: 3)
+
+Sublesson.create(title: "Burgundy", body: "Burgundy style wines come from the Pinot Noir grape.  The most sensual and beguiling of all red wines, the best Pinot Noirs are from Burgundy, but California, Oregon and New Zealand have all done wonders with this difficult grape. Though Pinot Noir appears in many different styles, its hallmarks are seductive scents and flavors that suggest cherries, strawberries and damp earth or mushrooms, and, above all, a silky texture. Bottlings range from light- to medium-bodied and from simple to complex, but very few are tannic, and almost all can be drunk young. California's Pinot Noirs are beginning to rival Burgundy's for elegance and complexity; Oregon's have delicacy, charm and bright cherry fruit, though a few wineries there are also making bigger wines. The wine's low tannin, tart fruitiness and subtle flavors make it flexible with food. Fruity styles work well with Asian flavors and fish; earthier ones respond beautifully to mushrooms and game.", lesson_id: 3)
+
+Sublesson.create(title: "Juicy", body: "Juicy reds provide us with an everyday drinking wine that is readily available.  Among them we find light Cabernets and Merlots from Australia, California, Chile, Washington and France.  Although less popular in the U.S., we also find other good juicy reds from Spain (Tempranillos), France (Crus Beaujolais), and Italy (Dolcetto).  As mentioned before, this is a great everyday wine, so we can match these perfectly with hamburgers, grilled meats and stews.", lesson_id: 3)
+
+Sublesson.create(title: "Warm & Spicy", body: "Warm & Spicy reds are just as they sound, spicy and hearty.  Among the varieties of this style are Nebbiolo, Sangiovese, Grenache, Syrah/Shiraz and Zinfandel. Within this style we can find blends that have their own nuances, such as Sangiovese blended with Cabernet.  This style provides us with deep flavor that can pair well with stews and game.", lesson_id: 3)
+
+
+Quiz.create(lesson_id: 3)
+
+Question.create(quiz_id: 3, body: "How many categories of red wine are there?")
+
+Answer.create(question_id: 5, body: "1")
+Answer.create(question_id: 5, body: "2")
+Answer.create(question_id: 5, body: "3")
+Answer.create(question_id: 5, body: "4", correct: true)
+
+Question.create(quiz_id: 3, body: "What are the hallmarks of burgundy style wines?")
+
+Answer.create(question_id: 6, body: "rough texture")
+Answer.create(question_id: 6, body: "seductive scents", correct: true)
+Answer.create(question_id: 6, body: "a woody taste")
+Answer.create(question_id: 6, body: "bitterness")
