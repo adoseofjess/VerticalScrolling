@@ -161,3 +161,35 @@ Answer.create(question_id: 10, body: "brandy")
 Answer.create(question_id: 10, body: "ports and sherries", correct: true)
 Answer.create(question_id: 10, body: "sparkling wine")
 Answer.create(question_id: 10, body: "tapas")
+
+Lesson.create(title: "How to Store Wine", locked: true, course_id: 1, introduction: "A few simple tips on how to store your new wine purchases can keep them safe and sound until you are ready to enjoy them. So you’ve purchased a case of wine…now where are you going to put it? You absolutely do not need a large wine refrigerator or your own cellar to store wine well. In fact, only a small percentage of wines on the market benefit from long-term aging, while most are ready to drink within a few years of release. Following a few simple guidelines should keep your wines safe and delicious until you’re ready to drink them.")
+
+Sublesson.create(title: "Keep It Cool & Dark", body: "Heat is enemy number one for wine. Temperatures higher than 70° F will age a wine more quickly than is desirable.  Optimal wine storage is about 55°F.  But more important than worrying about achieving that perfect level is avoiding any extreme or frequent temperature swings.  Also keep an eye on the humidity.  Wines should be stored at an ideal humidity level of 70 percent. The theory goes that dry air will dry out the corks, which would let air into the bottle and spoil the wine.
+
+Light, especially sunlight, can pose a potential problem for long-term storage. The sun’s UV rays can degrade and prematurely age wine. This is one of the reasons some winemakers make darker bottles, adequately protecting the wine from the light.
+
+Also, you can keep your wine in your household refrigerator for up to a couple months, but it’s not a good bet for the longer term and it takes up a lot of space.", lesson_id: 6)
+
+Sublesson.create(title: "Keep it Sideways", body: "Traditionally, bottles have been stored on their sides in order to keep the liquid up against the cork, which should keep the cork from drying out. If you’re planning on drinking these bottles in the near future, or if the bottles have different closures (screw caps, glass or plastic corks), this is not necessary. However, sideways racking is a space-efficient way to store your bottles, and it looks pretty cool.", lesson_id: 6)
+
+Sublesson.create(title: "So Where Should I Keep My Bottles?", body: "If you’re not lucky enough to have a perfect basement that can double as a cellar, you can do just fine with some simple racks in a safe place. Rule out your kitchen or laundry room, where hot temperatures could affect your wines, and look for a location not directly in line with light pouring in from a window Above all, don’t stash a collection on top of the refrigerator.  Overhead lighting and refrigerator exhaust give off a lot of heat, and the constant vibration can affect the taste.  A simple closet is a good choice.
+
+If you want to do more than just the basic wine racks, you have a whole range of choices. They range from buying a small wine storage cabinet to building an actual wine room/cellar. Figure out how much wine you want to store first and then plan on how to do it. For most of us, storing wine in a specifically designed cabinet will do very well. What you decide to do will also depend on the kinds of wine you want to keep, and when you want to drink them. A good part of any storage system is a method of keeping track of what you have and make it easy to find when you want to drink it. Using either an app or just basic organization can keep your wine storage functional.
+
+There is no worse experience than opening up a bottle of wine you are excited for and finding it spoiled! Following these simple wine storage tips can keep you and your wines happy campers.", lesson_id: 6)
+
+Quiz.create(lesson_id: 6)
+
+Question.create(quiz_id: 6, body: "In what orientation should you keep your bottles?")
+
+Answer.create(question_id: 11, body: "Right side up")
+Answer.create(question_id: 11, body: "Upside down")
+Answer.create(question_id: 11, body: "Diagonal")
+Answer.create(question_id: 11, body: "Sideways", correct: true)
+
+Question.create(quiz_id: 6, body: "What temperature should I keep my wines?")
+
+Answer.create(question_id: 12, body: "warm")
+Answer.create(question_id: 12, body: "cool", correct: true)
+Answer.create(question_id: 12, body: "hot")
+Answer.create(question_id: 12, body: "freezing")
