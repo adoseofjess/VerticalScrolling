@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :password, :username
+  attr_accessible :password, :username, :current_lesson_id
   attr_reader :password
   
   has_many(
@@ -57,6 +57,10 @@ BCrypt::Password.new(self.password_digest).is_password?(password)
   #     }
   #   )
   #   super(options)
+  # end
+  
+  # def as_json(options={})
+  #   super(:include => [:current_lesson_id])
   # end
   
   private
