@@ -1,21 +1,29 @@
-<div class="content-lesson-title"><%= lesson.escape("title") %></div><br>
+<div class="all-content-text">
 
-<% lesson.sublessons().forEach(function(sublesson) { %>
+  <div class="content-lesson-title"><%= lesson.escape("title") %></div><br>
+
+  <% lesson.sublessons().forEach(function(sublesson) { %>
   
-  <%= sublesson.escape("title") %><br><br>
-  <%= sublesson.escape("body") %><br><br>
-<% }) %>
-
-<% if (lesson.quizzes()) { %>
-  Lesson Quiz<br>
-  <% lesson.quizzes().first().questions().forEach(function(question) { %>
-    <br><%= question.escape("body") %><br><br>
-    <form class="quiz-form">
-      <% question.answers().forEach(function(answer) { %>
-        <input type="radio" name="<%=question.escape('id')%>" value="<%= answer.escape('correct')%>"><%= answer.escape("body") %><br>
-      <% }) %>
+    <div class="content-sublesson-title"><%= sublesson.escape("title") %></div><br>
+    <%= sublesson.escape("body") %><br><br>
   <% }) %>
-  <input type="submit" value="Submit">
-  </form>
-<% } %>
-<br><br>
+
+  <% if (lesson.quizzes()) { %>
+    Lesson Quiz<br>
+    <% lesson.quizzes().first().questions().forEach(function(question) { %>
+      <br><%= question.escape("body") %><br><br>
+      <form class="quiz-form">
+        <% question.answers().forEach(function(answer) { %>
+          <input type="radio" name="<%=question.escape('id')%>" value="<%= answer.escape('correct')%>"><%= answer.escape("body") %><br>
+        <% }) %>
+    <% }) %>
+    <br>
+    <input type="submit" value="Submit">
+    <% if (lesson.get("locked")) { %>
+      (Hint: Submit the quiz to unlock the next lesson!)
+    <% } %>
+    </form>
+  <% } %>
+  <br><br>
+  
+</div>

@@ -38,6 +38,9 @@ Prototype.Views.ContentShow = Backbone.View.extend({
       if (nextLesson.get("locked") == true) {
         console.log(Prototype.current_user.get("current_lesson_id"))
         Prototype.current_user.save({current_lesson_id: nextLesson.id.toString()})
+        
+        Prototype.current_user.trigger("lessonUnlocked");
+        
         console.log(Prototype.current_user.get("current_lesson_id"))
         this.addNextLesson();
       }
@@ -49,7 +52,7 @@ Prototype.Views.ContentShow = Backbone.View.extend({
   },
   
   checkScroll: function(event) {
-    console.log(this.lesson.id)
+   
     if ($(event.currentTarget).scrollTop() >= ($(event.currentTarget)[0].scrollHeight - $(document).height())){
       if (Prototype.courses.first().lessons().findWhere({id: (this.lesson.id + 1)})) {
           this.addNextLesson();

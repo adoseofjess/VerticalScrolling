@@ -1,23 +1,25 @@
 <% lessons.forEach(function(lesson) { %>
   <% if (lesson.escape("locked") == "false") { %>
-    <div class="lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a><br><br></div>
+    <div class="sidebar-lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a><br><br></div>
     <% lesson.sublessons().forEach(function(sublesson) { %>
-      <div class="sublesson-title" data-id="<%= sublesson.id %>"><%= sublesson.escape("title") %><br><br></div>
+      <div class="sidebar-sublesson-title" data-id="<%= sublesson.id %>"><%= sublesson.escape("title") %><br></div>
     <% }); %>
+    <br>
   <% } %>
   
-
-
   <% if (lesson.escape("locked") == "true") { %>
-    <div class="lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a> 
+    <div class="sidebar-lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a></div> 
       
       <% if (Prototype.current_user.get("current_lesson_id") == undefined || (parseInt(user.get("current_lesson_id")) < lesson.id) ) { %>
-        <i class="fa fa-lock"></i>
+        <div class="lock"><i class="fa fa-lock"></i></div><br>
+      <% } else { %>
+        <div class="lock"><i class="fa fa-unlock"></i></div><br><br>
+        <% lesson.sublessons().forEach(function(sublesson) { %>
+          <div class="sidebar-sublesson-title" data-id="<%= sublesson.id %>"><%= sublesson.escape("title") %></div>
+        <% }); %>
       <% } %>
-      
-      
-      
-      
-       <br><br></div>
+       <br>
+       
+       
   <% } %>
 <% }); %>

@@ -3,11 +3,12 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
   
   initialize: function (options) {
     this.course = options.course;
+    this.listenTo(Prototype.current_user, "lessonUnlocked", this.render);
     // this.listenTo(Prototype.current_user, "add remove change", this.render);
   }, 
   
   events: {
-    "click .lesson-title": "showLesson",
+    "click .sidebar-lesson-title": "showLesson",
     // "click .sublesson-title": "showSublesson",
   },
 
@@ -36,6 +37,14 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
       // $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
       $(".view").html(contentShowView.render().$el);
     } 
+    else {
+      if (parseInt(Prototype.current_user.get("current_lesson_id")) >= lesson_id) {
+        var contentShowView = new Prototype.Views.ContentShow({
+          lesson: Prototype.courses.first().lessons().findWhere({id: lesson_id}),
+        });
+        $(".view").html(contentShowView.render().$el);
+      }
+     }
     
     
   },

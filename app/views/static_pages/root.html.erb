@@ -9,53 +9,61 @@
   <%= current_user.to_json.html_safe %>
 </script>
 <div class="container">
-<header>
-  <div class="versal-logo">versal </div>
-  <div class="user-log-in">
-    <% if !current_user.nil? %>
+  <header>
+    <div class="versal-logo"></div>
+    <div class="user-log-in">
+      <% if !current_user.nil? %>
+        <ul>
+          Logged in as: <%= current_user.username %></li>
+          <%= button_to "Logout", session_url, :method => :delete %></li>
+        </ul>
+      <% else %>
+      
       <ul>
-        <li>Logged in as: <%= current_user.username %></li>
-        <li><%= button_to "Logout", session_url, :method => :delete %></li>
+        <form role="form" action="<%= session_url %>" method="post">
+          <div class="form-group">
+            <input
+              name="authenticity_token"
+              type="hidden"
+              value="<%= form_authenticity_token %>">
+          </div>
+          <div class="form-group">
+            <input 
+              id="user_username"
+              name="user[username]"
+              value="guest"
+              type="hidden">
+          </div>
+          <div class="form-group">
+            <input
+              id="user_password"
+              name="user[password]"
+              value="helloworld"
+              type="hidden">
+          </div>
+          <div class="log-in-as-guest-button">
+          <button type="submit" class="btn btn-success">Log In as Guest</button>
+          </div>
+        </form>
       </ul>
-    <% else %>
-    <form role="form" action="<%= session_url %>" method="post">
-      <div class="form-group">
-        <input
-          name="authenticity_token"
-          type="hidden"
-          value="<%= form_authenticity_token %>">
-      </div>
-      <div class="form-group">
-        <input 
-          id="user_username"
-          name="user[username]"
-          value="guest"
-          type="hidden">
-      </div>
-      <div class="form-group">
-        <input
-          id="user_password"
-          name="user[password]"
-          value="helloworld"
-          type="hidden">
-      </div>
-      <div class="log-in-as-guest-button">
-      <button type="submit" class="btn btn-success">Log In as Guest</button>
-      </div>
-    </form>
-    <% end %>
-  </div>
-</header>
+      <% end %>
+    </div>
+  </header>
 
-<div class="content-container">
-  <div class="sidebar">
+  <div class="content-container">
     <div class="course-title-show"></div>
-    <div class="lesson-title-show"></div>
+      <div class="course-show">
+        <div class="sidebar">
+        <!-- <div class="course-title-show"></div> -->
+        <div class="lesson-title-show"></div>
+      </div>
+        <div class="view">
+      <!-- <div class="sublesson-title-show"></div> -->
+      <div class="content-show"></div>
+    </div>
+      </div>
   </div>
-  <div class="view">
-    <div class="sublesson-title-show"></div>
-    <div class="content-show"></div>
-  </div>
+
 </div>
-<footer>© 2014 Jessica J. Kim</footer>
-</div>
+
+<footer><p>© 2014 Jessica J. Kim</p></footer>
