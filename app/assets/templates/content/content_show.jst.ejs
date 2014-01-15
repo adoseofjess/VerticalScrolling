@@ -9,7 +9,13 @@
   <% }) %>
 
   <% if (lesson.quizzes()) { %>
-    Lesson Quiz<br>
+    Lesson Quiz
+    <% if (lesson.get("locked")) { %>
+      <i>(Hint: Submit the quiz to unlock the next lesson!)</i><br>
+    <% } else { %>
+      <i>(Solve the quiz to review the lesson!)</i><br>
+    <% } %>
+    
     <% lesson.quizzes().first().questions().forEach(function(question) { %>
       <br><%= question.escape("body") %><br><br>
       <form class="quiz-form">
@@ -19,9 +25,6 @@
     <% }) %>
     <br>
     <input type="submit" value="Submit">
-    <% if (lesson.get("locked")) { %>
-      (Hint: Submit the quiz to unlock the next lesson!)
-    <% } %>
     </form>
   <% } %>
   <br><br>
