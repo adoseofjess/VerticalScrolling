@@ -105,3 +105,59 @@ Answer.create(question_id: 6, body: "rough texture")
 Answer.create(question_id: 6, body: "seductive scents", correct: true)
 Answer.create(question_id: 6, body: "a woody taste")
 Answer.create(question_id: 6, body: "bitterness")
+
+Lesson.create(title: "Styles of White Wine", locked: true, course_id: 1, introduction: "Although wine tasting is very much subjective, there are general tastes that can be commonly shared and understood. In the following section I will take you through some of the general concepts on white wine styles. While not given the same respect as their red couterparts, white wines can offer some very unique and delicious flavors that would satisfy even the most discernable of palates. Like reds, white wines have varying flavors and styles.  The following are brief descriptions and suggested food pairings for whites broken down into the following categories: Chardonnay, Riesling, Floral, Acidic and Sweet.")
+
+Sublesson.create(title: "Chardonnay", body: "Chardonnay can range in flavor from fruity, to flinty or spicy depending on the way the grape is fermented and aged.  Classic Chardonnay is fermented and then aged in oak barrels for a minimum of 12 months.  This lends the wine a fruity flavor that matches well with roasted chicken, baked fish and creamy pasta dishes such as Fettuccine Alfredo.", lesson_id: 4)
+
+Sublesson.create(title: "Unoaked Chardonnay", body: "Unoaked Chardonnay, however, has a flinty or steely flavor.  This style originated from the Chablis district of Burgundy and, as the name suggests, is not aged in oak barrels.  Although the best of these wines come from Chablis some good varieties have come from the US, Australia and New Zealand.  It is a crisp and refreshing wine that is best paired with shellfish.", lesson_id: 4)
+
+Sublesson.create(title: "Spicy Chardonnays", body: "Spicy Chardonnays are oaked but are not as complex as the classic varieties.  Their flavors are suggestive of tropical fruit, citrus and melon or apple and make for good aperitifs or accompaniments to pastas and grilled meats.", lesson_id: 4)
+
+Sublesson.create(title: "Riesling", body: "Riesling wines can be either dry or sweet.  Dry Reisling has a distinct floral aroma and tastes of both fruit and acidity.  Although it can be paired well with many foods, it is best consumed alone to best appreciate its complexity.  Sweeter style Rieslings have the same distinct flavors as dry Rieslings with the addition of honey and a richer texture on the palate.  These can best be appreciated as aperitifs, with rich blue cheeses or spicey foods.", lesson_id: 4)
+
+Sublesson.create(title: "Floral whites", body: "Floral whites are perfumy and are usually sweet on the finish.  Two classic examples of this style of wine are Gewurztraminer and Pinot Gris from the Alsace region of France.  Viogniers from France, California and Virginia have more fruity undertones but pair nicely with the same foods as Gerwurztraminer and Pinot Gris such as spicy asian dishes, smoked meats, cheeses and fish.", lesson_id: 4)
+
+Quiz.create(lesson_id: 4)
+
+Question.create(quiz_id: 4, body: "How many categories of white wine are there?")
+
+Answer.create(question_id: 7, body: "1")
+Answer.create(question_id: 7, body: "2")
+Answer.create(question_id: 7, body: "3")
+Answer.create(question_id: 7, body: "4", correct: true)
+
+Question.create(quiz_id: 4, body: "What are the foods that go well with Chardonnay?")
+
+Answer.create(question_id: 8, body: "fruits")
+Answer.create(question_id: 8, body: "pastas and grilled meats", correct: true)
+Answer.create(question_id: 8, body: "bread and cheese")
+Answer.create(question_id: 8, body: "salsa")
+
+Lesson.create(title: "Other Styles of Wine", locked: true, course_id: 1, introduction: "Although wine tasting is very much subjective, there are general tastes that can be commonly shared and understood. In the following section I will take you through some of the general concepts on Rose, Sparkling and Fortified Wines.")
+
+Sublesson.create(title: "Rose Wines", body: "Rose wines are made with red grape varietals.  The skins of the grapes are only allowed to sit with the wine for 2-3 days after pressing as opposed to the usual 14 during the production of reds.  Similarly to Rieslings, Roses can range in flavor from dry to sweet. Higher quality dry Roses come from the South of France or the North of Spain and are made from the Granache (or Garnacha) grape.   A good, dry Rose can be an excellent accompaniment to foods, especially Mediterranean fare or cheeses.  Even the best of these wines are usually economically priced.  A good, non-sparkling Rose can range in price from $20 to $25 dollars a bottle.", lesson_id: 5)
+
+Sublesson.create(title: "Sparkling Wines", body: "The crown jewel of this category is, of course, Champagne.  No sparkling wine produced outside of the Champagne region of France can be called Champagne despite the common misuse of the term to refer to all sparkling wines.  Proseccos, Astis and Brachettos from Italy as well as Cavas from Spain can all be festive and vary widely in flavors.  Dry or off-dry champagne or champagne style California wines go well with oysters or caviar.  Generally, sparkling wines are wonderful all on their own or can be a lovely way to commence a special meal.", lesson_id: 5)
+
+Sublesson.create(title: "Fortified Wines", body: "Fortified wines are all richer, sweeter and possess more alcohol than their unfortified counterparts.  Ports and Sherries are the two most important wines of this category.
+
+Portugal's classic wine, Port, is made from grapes that are grown and processed in the Duouro region.  Although it can be created in various different sub-styles including ruby, white, tawny and vintage, all ports generally have a rich depth of flavor and warmth.  Ruby Port has bright fruit flavors while tawny and vintage ports are more powerful and bold.  Many European countries enjoy ports as aperitifs but they are also commonly enjoyed in the United States as dessert wines, accompanied by cheese courses.
+
+Spain's sherry wine is the classic accompaniment to their traditional pre-dinner tapas.  In fact, the tradition of those savory snacks originated from the need to cover ('tapar' in Spanish) the tops of sherry glasses with slices of bread to shield the libation from pesky flies.  The Spaniards decided to add things to the tops of those bread slices and the rest is gastronomic history.  Considering its origins, it is safe to say that dry sherry wines pair well with foods.  Raisiny, sweet sherries also pair well with soft and cheddar-style cheeses.", lesson_id: 5)
+
+Quiz.create(lesson_id: 5)
+
+Question.create(quiz_id: 5, body: "Where does champagne originate?")
+
+Answer.create(question_id: 9, body: "Australia")
+Answer.create(question_id: 9, body: "Germany")
+Answer.create(question_id: 9, body: "Portugal")
+Answer.create(question_id: 9, body: "France", correct: true)
+
+Question.create(quiz_id: 5, body: "What are examples of fortified wines?")
+
+Answer.create(question_id: 10, body: "brandy")
+Answer.create(question_id: 10, body: "ports and sherries", correct: true)
+Answer.create(question_id: 10, body: "sparkling wine")
+Answer.create(question_id: 10, body: "tapas")

@@ -5,8 +5,19 @@
       <div class="sublesson-title" data-id="<%= sublesson.id %>"><%= sublesson.escape("title") %><br><br></div>
     <% }); %>
   <% } %>
+  
+
 
   <% if (lesson.escape("locked") == "true") { %>
-    <div class="lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %> (locked)</a><br><br></div>
+    <div class="lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a> 
+      
+      <% if (Prototype.current_user.get("current_lesson_id") == undefined || (parseInt(user.get("current_lesson_id")) < lesson.id) ) { %>
+        <i class="fa fa-lock"></i>
+      <% } %>
+      
+      
+      
+      
+       <br><br></div>
   <% } %>
 <% }); %>

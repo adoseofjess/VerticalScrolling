@@ -1,12 +1,7 @@
-<div class="lesson-title"><%= lesson.escape("title") %></div><br>
-
-<!-- <% if (lesson.sublessons()) { %>
-  YES SUBLESSONS
-<% } else { %>
-  NO
-<% } %> -->
+<div class="content-lesson-title"><%= lesson.escape("title") %></div><br>
 
 <% lesson.sublessons().forEach(function(sublesson) { %>
+  
   <%= sublesson.escape("title") %><br><br>
   <%= sublesson.escape("body") %><br><br>
 <% }) %>
@@ -17,10 +12,10 @@
     <br><%= question.escape("body") %><br><br>
     <form class="quiz-form">
       <% question.answers().forEach(function(answer) { %>
-        <input type="radio" value="<%= answer.escape('correct')%>"><%= answer.escape("body") %><br>
+        <input type="radio" name="<%=question.escape('id')%>" value="<%= answer.escape('correct')%>"><%= answer.escape("body") %><br>
       <% }) %>
   <% }) %>
   <input type="submit" value="Submit">
   </form>
 <% } %>
-
+<br><br>

@@ -3,6 +3,7 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
   
   initialize: function (options) {
     this.course = options.course;
+    // this.listenTo(Prototype.current_user, "add remove change", this.render);
   }, 
   
   events: {
@@ -14,7 +15,9 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
     var renderedContent = this.template({ 
       course: this.course, 
       lessons: this.course.lessons(),
+      user: Prototype.current_user,
     });
+    
     this.$el.html(renderedContent);
     return this;
   },
@@ -25,11 +28,16 @@ Prototype.Views.LessonTitleShow = Backbone.View.extend({
     // var sublessonTitleShowView = new Prototype.Views.SublessonTitleShow({
 //       sublesson: Prototype.courses.first().lessons().first().sublessons().first(),
 //     });
-    var contentShowView = new Prototype.Views.ContentShow({
-      lesson: Prototype.courses.first().lessons().where({id: lesson_id})[0],
-    });
-    // $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
-    $(".view").html(contentShowView.render().$el);
+    
+    if (!Prototype.courses.first().lessons().findWhere({id: lesson_id}).get("locked") == true) {
+      var contentShowView = new Prototype.Views.ContentShow({
+        lesson: Prototype.courses.first().lessons().findWhere({id: lesson_id}),
+      });
+      // $(".sublesson-title-show").html(sublessonTitleShowView.render().$el);
+      $(".view").html(contentShowView.render().$el);
+    } 
+    
+    
   },
   
   // showSublesson: function (event) {
