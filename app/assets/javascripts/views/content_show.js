@@ -3,7 +3,8 @@ Prototype.Views.ContentShow = Backbone.View.extend({
   
   initialize: function (options) {
     this.$el = $("<div class=\"content-show\"></div>") 
-    this.lesson = options.lesson;  
+    this.lesson = options.lesson; 
+    this.listenTo(Prototype.current_user, "lessonUnlocked", this.render);
   }, 
   
   events: {
@@ -14,7 +15,7 @@ Prototype.Views.ContentShow = Backbone.View.extend({
   render: function () {
     var renderedContent = this.template( { 
       lesson: this.lesson,
-     } )
+     })
  
     this.$el.html(renderedContent);
     return this;
@@ -22,6 +23,7 @@ Prototype.Views.ContentShow = Backbone.View.extend({
   
   checkQuiz: function(event) {
     event.preventDefault();
+    
     var answers = [];
     $('input:checked').each(function(input) {answers.push($(this).val())})
     var passedQuiz = true; 
@@ -30,24 +32,45 @@ Prototype.Views.ContentShow = Backbone.View.extend({
         passedQuiz = false;
       }
     }
-    if (passedQuiz) {
-      var nextLesson = Prototype.courses.first().lessons().findWhere({id: (this.lesson.id + 1)})
-      // if the next lesson is locked, update the user's current_lesson_id
-      if (nextLesson.get("locked") == true) {
-        console.log(Prototype.current_user.get("current_lesson_id"))
-        Prototype.current_user.save({current_lesson_id: nextLesson.id.toString()})
-        Prototype.current_user.trigger("lessonUnlocked");
-        this.addNextLesson();
-      }
-      // else just add the next lesson
-      else {
-        this.addNextLesson();
+    
+    if ((parseInt(Prototype.current_user.get("last_solved_quiz")) + 1) < parseInt($(event.currentTarget).attr("data-id"))) {
+      
+      alert("you need to unlock the other courses!")
+    } else {
+      if (passedQuiz) {
+      
+      
+        Prototype.current_user.save({last_solved_quiz: $(event.currentTarget).attr("data-id").toString()})
+      
+        var nextLesson = Prototype.courses.first().lessons().findWhere({id: (parseInt($(event.currentTarget).attr("data-id")) + 1)})
+      
+        // if the lesson is the last one, user passes course
+        if (nextLesson == undefined && parseInt(Prototype.current_user.get("current_lesson_id")) >= Prototype.courses.first().lessons().length) {
+          Prototype.current_user.trigger("lessonUnlocked")
+          alert("you passed the course!")
+        }
+        // if the lesson was not the last one
+        else { 
+          // if the user has passed all previous courses, add the next lesson and update the user's current_lesson_id
+        
+          // unlock the next lesson
+          Prototype.current_user.save({current_lesson_id: nextLesson.id.toString()})
+          Prototype.current_user.save({last_unlocked_lesson: nextLesson.id.toString()})
+          this.lesson = Prototype.courses.first().lessons().findWhere({id: (parseInt($(event.currentTarget).attr("data-id")))});
+        
+          Prototype.current_user.trigger("lessonUnlocked");
+        }
+      } else {
+          alert("wrong answers!")
       }
     }
+    
+    
   },
   
   checkScroll: function(event) {
-   
+    console.log(Prototype.current_user.get("current_lesson_id"))
+    // console.log(this.lesson.id)
     if ($(event.currentTarget).scrollTop() >= ($(event.currentTarget)[0].scrollHeight - $(document).height())){
       if (Prototype.courses.first().lessons().findWhere({id: (this.lesson.id + 1)})) {
           this.addNextLesson();
@@ -55,27 +78,37 @@ Prototype.Views.ContentShow = Backbone.View.extend({
     }
   }, 
   
-  addNextLesson: function() {    
+  addNextLesson: function() {   
+    // console.log("in add next lesson")
+//     console.log(Prototype.current_user.get("current_lesson_id"))
+//     console.log(this.lesson.id) 
     var nextLesson = Prototype.courses.first().lessons().findWhere({id: (this.lesson.id + 1)}) 
-    // if the next lesson isn't locked, display it on the page 
-    if (!nextLesson.get("locked")) {
-      this.lesson = nextLesson;
-      var nextLessonView = this.template({
-        lesson: this.lesson
-      })
-      
-      $(".content-show").append(nextLessonView);
+    
+    // if this lesson is not locked, increase the user's current lesson id
+    if (this.lesson.quizzes().length == 0) {
+      Prototype.current_user.save({current_lesson_id: nextLesson.id.toString()})
     }
-    // if locked, check if the next lesson is in user's list of completed courses
-    else {
-      if (parseInt(Prototype.current_user.get("current_lesson_id")) >= nextLesson.id) {
+   
+     
+    if (nextLesson.get("id") != undefined) {
+      if (nextLesson.get("locked")) {
         this.lesson = nextLesson;
         var nextLessonView = this.template({
           lesson: this.lesson
         })
-      
+        
         $(".content-show").append(nextLessonView);
-      } 
+      } else {
+        // Prototype.current_user.save({current_lesson_id: nextLesson.id.toString()})
+        this.lesson = nextLesson;
+        var nextLessonView = this.template({
+          lesson: this.lesson
+        })
+    
+        $(".content-show").append(nextLessonView);
+      }
+      
+      
     }
   }
 });

@@ -27,21 +27,21 @@ Sublesson.create(title: "The Finishing Touches: Filtration and Clarification", b
 
 Sublesson.create(title: "Bottling & Final Aging", body: "At this point, the wine is ready to be bottled. Today, wines are bottled mechanically, using bottling lines to make the process quicker and easier. Bottles are filled slowly and then a gas, either nitrogen or carbon dioxide, is released to displace any remaining oxygen that can age the wine. The bottle is then topped with either a modern, high tech screw cap or a traditional cork, based on the preference of the winemaker and it is ready to go! Some wines will be released for consumption immediately, while others will be subjected to additional bottle aging. Again, this is up to the discretion of the winemaker in their goal of creating the wine they envision.", lesson_id: 1)
 
-Quiz.create(lesson_id: 1)
-
-Question.create(quiz_id: 1, body: "What is the key to picking good grapes for wine?")
-
-Answer.create(question_id: 1, body: "right degree of ripeness", correct: true)
-Answer.create(question_id: 1, body: "right temperature")
-Answer.create(question_id: 1, body: "right color")
-Answer.create(question_id: 1, body: "right location")
-
-Question.create(quiz_id: 1, body: "What is clarification?")
-
-Answer.create(question_id: 2, body: "filtering the wine product")
-Answer.create(question_id: 2, body: "using egg whites to bind some of the wine particles together", correct: true)
-Answer.create(question_id: 2, body: "heating the finished wine product")
-Answer.create(question_id: 2, body: "changing the coloring of the wine")
+# Quiz.create(lesson_id: 1)
+# 
+# Question.create(quiz_id: 1, body: "What is the key to picking good grapes for wine?")
+# 
+# Answer.create(question_id: 1, body: "right degree of ripeness", correct: true)
+# Answer.create(question_id: 1, body: "right temperature")
+# Answer.create(question_id: 1, body: "right color")
+# Answer.create(question_id: 1, body: "right location")
+# 
+# Question.create(quiz_id: 1, body: "What is clarification?")
+# 
+# Answer.create(question_id: 2, body: "filtering the wine product")
+# Answer.create(question_id: 2, body: "using egg whites to bind some of the wine particles together", correct: true)
+# Answer.create(question_id: 2, body: "heating the finished wine product")
+# Answer.create(question_id: 2, body: "changing the coloring of the wine")
 
 Lesson.create(title: "The Tasting Process", locked: false, course_id: 1, introduction: "How to taste wine seems simple enough - let us show you how to get the most out of every sip! There are four parts to the tasting process – viewing, agitating, smelling and tasting. I’m assuming you have a clean, clear glass with which you can easily swirl the wine. It’s also nice to have a glass with a stem that makes the glass comfortable to hold, you do not want to touch the glass much as the heat from your hands will transfer to the wine.")
 
@@ -65,19 +65,19 @@ One last thing you should be aware of when drinking wine is sulfur. Sulfur is pr
 
 Quiz.create(lesson_id: 2)
 
-Question.create(quiz_id: 2, body: "The first part of the process involves using what?")
+Question.create(quiz_id: 1, body: "The first part of the process involves using what?")
 
-Answer.create(question_id: 3, body: "your eyes", correct: true)
-Answer.create(question_id: 3, body: "your hands")
-Answer.create(question_id: 3, body: "your mouth")
-Answer.create(question_id: 3, body: "your nose")
+Answer.create(question_id: 1, body: "your eyes", correct: true)
+Answer.create(question_id: 1, body: "your hands")
+Answer.create(question_id: 1, body: "your mouth")
+Answer.create(question_id: 1, body: "your nose")
 
-Question.create(quiz_id: 2, body: "What is the most common defect for wine?")
+Question.create(quiz_id: 1, body: "What is the most common defect for wine?")
 
-Answer.create(question_id: 4, body: "overheated wine")
-Answer.create(question_id: 4, body: "corked wine", correct: true)
-Answer.create(question_id: 4, body: "too old")
-Answer.create(question_id: 4, body: "wrong type of grapes")
+Answer.create(question_id: 2, body: "overheated wine")
+Answer.create(question_id: 2, body: "corked wine", correct: true)
+Answer.create(question_id: 2, body: "too old")
+Answer.create(question_id: 2, body: "wrong type of grapes")
 
 Lesson.create(title: "Styles of Red Wine", locked: true, course_id: 1, introduction: "Although wine tasting is very much subjective, there are general tastes that can be commonly shared and understood. In the following section I will take you through some of the general concepts on red wine styles. Reds can range from great bold and tannic wines that require aging, to silky and smooth young wines. To easily differentiate between Red wine styles, we can separate them into four categories — Bordeaux, Burgundy, Juicy and Warm & Spicy.")
 
@@ -92,19 +92,19 @@ Sublesson.create(title: "Warm & Spicy", body: "Warm & Spicy reds are just as the
 
 Quiz.create(lesson_id: 3)
 
-Question.create(quiz_id: 3, body: "How many categories of red wine are there?")
+Question.create(quiz_id: 2, body: "How many categories of red wine are there?")
 
-Answer.create(question_id: 5, body: "1")
-Answer.create(question_id: 5, body: "2")
-Answer.create(question_id: 5, body: "3")
-Answer.create(question_id: 5, body: "4", correct: true)
+Answer.create(question_id: 3, body: "1")
+Answer.create(question_id: 3, body: "2")
+Answer.create(question_id: 3, body: "3")
+Answer.create(question_id: 3, body: "4", correct: true)
 
-Question.create(quiz_id: 3, body: "What are the hallmarks of burgundy style wines?")
+Question.create(quiz_id: 2, body: "What are the hallmarks of burgundy style wines?")
 
-Answer.create(question_id: 6, body: "rough texture")
-Answer.create(question_id: 6, body: "seductive scents", correct: true)
-Answer.create(question_id: 6, body: "a woody taste")
-Answer.create(question_id: 6, body: "bitterness")
+Answer.create(question_id: 4, body: "rough texture")
+Answer.create(question_id: 4, body: "seductive scents", correct: true)
+Answer.create(question_id: 4, body: "a woody taste")
+Answer.create(question_id: 4, body: "bitterness")
 
 Lesson.create(title: "Styles of White Wine", locked: true, course_id: 1, introduction: "Although wine tasting is very much subjective, there are general tastes that can be commonly shared and understood. In the following section I will take you through some of the general concepts on white wine styles. While not given the same respect as their red couterparts, white wines can offer some very unique and delicious flavors that would satisfy even the most discernable of palates. Like reds, white wines have varying flavors and styles.  The following are brief descriptions and suggested food pairings for whites broken down into the following categories: Chardonnay, Riesling, Floral, Acidic and Sweet.")
 
@@ -120,19 +120,19 @@ Sublesson.create(title: "Floral whites", body: "Floral whites are perfumy and ar
 
 Quiz.create(lesson_id: 4)
 
-Question.create(quiz_id: 4, body: "How many categories of white wine are there?")
+Question.create(quiz_id: 3, body: "How many categories of white wine are there?")
 
-Answer.create(question_id: 7, body: "1")
-Answer.create(question_id: 7, body: "2")
-Answer.create(question_id: 7, body: "3")
-Answer.create(question_id: 7, body: "4", correct: true)
+Answer.create(question_id: 5, body: "1")
+Answer.create(question_id: 5, body: "2")
+Answer.create(question_id: 5, body: "3")
+Answer.create(question_id: 5, body: "4", correct: true)
 
-Question.create(quiz_id: 4, body: "What are the foods that go well with Chardonnay?")
+Question.create(quiz_id: 3, body: "What are the foods that go well with Chardonnay?")
 
-Answer.create(question_id: 8, body: "fruits")
-Answer.create(question_id: 8, body: "pastas and grilled meats", correct: true)
-Answer.create(question_id: 8, body: "bread and cheese")
-Answer.create(question_id: 8, body: "salsa")
+Answer.create(question_id: 6, body: "fruits")
+Answer.create(question_id: 6, body: "pastas and grilled meats", correct: true)
+Answer.create(question_id: 6, body: "bread and cheese")
+Answer.create(question_id: 6, body: "salsa")
 
 Lesson.create(title: "Other Styles of Wine", locked: true, course_id: 1, introduction: "Although wine tasting is very much subjective, there are general tastes that can be commonly shared and understood. In the following section I will take you through some of the general concepts on Rose, Sparkling and Fortified Wines.")
 
@@ -146,23 +146,23 @@ Portugal's classic wine, Port, is made from grapes that are grown and processed 
 
 Spain's sherry wine is the classic accompaniment to their traditional pre-dinner tapas.  In fact, the tradition of those savory snacks originated from the need to cover ('tapar' in Spanish) the tops of sherry glasses with slices of bread to shield the libation from pesky flies.  The Spaniards decided to add things to the tops of those bread slices and the rest is gastronomic history.  Considering its origins, it is safe to say that dry sherry wines pair well with foods.  Raisiny, sweet sherries also pair well with soft and cheddar-style cheeses.", lesson_id: 5)
 
-Quiz.create(lesson_id: 5)
+# Quiz.create(lesson_id: 5)
+# 
+# Question.create(quiz_id: 4, body: "Where does champagne originate?")
+# 
+# Answer.create(question_id: 7, body: "Australia")
+# Answer.create(question_id: 7, body: "Germany")
+# Answer.create(question_id: 7, body: "Portugal")
+# Answer.create(question_id: 7, body: "France", correct: true)
+# 
+# Question.create(quiz_id: 4, body: "What are examples of fortified wines?")
+# 
+# Answer.create(question_id: 8, body: "brandy")
+# Answer.create(question_id: 8, body: "ports and sherries", correct: true)
+# Answer.create(question_id: 8, body: "sparkling wine")
+# Answer.create(question_id: 8, body: "tapas")
 
-Question.create(quiz_id: 5, body: "Where does champagne originate?")
-
-Answer.create(question_id: 9, body: "Australia")
-Answer.create(question_id: 9, body: "Germany")
-Answer.create(question_id: 9, body: "Portugal")
-Answer.create(question_id: 9, body: "France", correct: true)
-
-Question.create(quiz_id: 5, body: "What are examples of fortified wines?")
-
-Answer.create(question_id: 10, body: "brandy")
-Answer.create(question_id: 10, body: "ports and sherries", correct: true)
-Answer.create(question_id: 10, body: "sparkling wine")
-Answer.create(question_id: 10, body: "tapas")
-
-Lesson.create(title: "How to Store Wine", locked: true, course_id: 1, introduction: "A few simple tips on how to store your new wine purchases can keep them safe and sound until you are ready to enjoy them. So you’ve purchased a case of wine…now where are you going to put it? You absolutely do not need a large wine refrigerator or your own cellar to store wine well. In fact, only a small percentage of wines on the market benefit from long-term aging, while most are ready to drink within a few years of release. Following a few simple guidelines should keep your wines safe and delicious until you’re ready to drink them.")
+Lesson.create(title: "How to Store Wine", locked: false, course_id: 1, introduction: "A few simple tips on how to store your new wine purchases can keep them safe and sound until you are ready to enjoy them. So you’ve purchased a case of wine…now where are you going to put it? You absolutely do not need a large wine refrigerator or your own cellar to store wine well. In fact, only a small percentage of wines on the market benefit from long-term aging, while most are ready to drink within a few years of release. Following a few simple guidelines should keep your wines safe and delicious until you’re ready to drink them.")
 
 Sublesson.create(title: "Keep It Cool & Dark", body: "Heat is enemy number one for wine. Temperatures higher than 70° F will age a wine more quickly than is desirable.  Optimal wine storage is about 55°F.  But more important than worrying about achieving that perfect level is avoiding any extreme or frequent temperature swings.  Also keep an eye on the humidity.  Wines should be stored at an ideal humidity level of 70 percent. The theory goes that dry air will dry out the corks, which would let air into the bottle and spoil the wine.
 
@@ -178,18 +178,48 @@ If you want to do more than just the basic wine racks, you have a whole range of
 
 There is no worse experience than opening up a bottle of wine you are excited for and finding it spoiled! Following these simple wine storage tips can keep you and your wines happy campers.", lesson_id: 6)
 
-Quiz.create(lesson_id: 6)
+# Quiz.create(lesson_id: 6)
 
-Question.create(quiz_id: 6, body: "In what orientation should you keep your bottles?")
+# Question.create(quiz_id: 5, body: "In what orientation should you keep your bottles?")
+# 
+# Answer.create(question_id: 9, body: "Right side up")
+# Answer.create(question_id: 9, body: "Upside down")
+# Answer.create(question_id: 9, body: "Diagonal")
+# Answer.create(question_id: 9, body: "Sideways", correct: true)
+# 
+# Question.create(quiz_id: 5, body: "What temperature should I keep my wines?")
+# 
+# Answer.create(question_id: 10, body: "warm")
+# Answer.create(question_id: 10, body: "cool", correct: true)
+# Answer.create(question_id: 10, body: "hot")
+# Answer.create(question_id: 10, body: "freezing")
 
-Answer.create(question_id: 11, body: "Right side up")
-Answer.create(question_id: 11, body: "Upside down")
-Answer.create(question_id: 11, body: "Diagonal")
-Answer.create(question_id: 11, body: "Sideways", correct: true)
+Lesson.create(title: "How to Cook With Wine", locked: false, course_id: 1, introduction: "Cooking with wine can seem intimidating but is truly an easy, fun way to enhance your meals. W.C. Fields has it right! The fun of using wine while you are in the kitchen is twofold. First off, you can make whatever you are cooking have a deeper and more nuanced flavor. Even better, cooking becomes even more fun when you are sipping a glass (or two!) while you make culinary magic. There are a few things to remember that will help you take your dish to the next level using wine.")
 
-Question.create(quiz_id: 6, body: "What temperature should I keep my wines?")
+Sublesson.create(title: "The first and most important rule", body: "Use only wines in your cooking that you would drink!  Never use any wine that you would not drink.  If you do not like the taste of a wine, you are only imparting that flavor into your food. Using wine when you cook is meant to make you like it more, not less.", lesson_id: 7)
 
-Answer.create(question_id: 12, body: "warm")
-Answer.create(question_id: 12, body: "cool", correct: true)
-Answer.create(question_id: 12, body: "hot")
-Answer.create(question_id: 12, body: "freezing")
+Sublesson.create(title: "Avoid the temptation to grab a bottle of 'cooking wine'", body: "These wines contain a lot of salt and other additives and again, unless you want to drink this from a glass, stay away.   Also, for those eating healthy, if you're cooking with a decent wine and using good seasonings, you can skip the extra and unhealthy sodium contained in these “cooking wines. You don’t need to uncork your best bottle for cooking, However a real cheapie will not bring out the best characteristics of your dish.  A decent, middle-of-the-road wine, that you like, will provide the same flavor to a dish as an expensive wine. Save the good stuff for drinking with the meal.", lesson_id: 7)
+
+Sublesson.create(title: "Cook with Wine", body: "Wine has three main uses in the kitchen - as a marinade ingredient, as a cooking liquid, and as a flavoring in a finished dish.
+
+The function of wine in cooking is to intensify and enhance the flavor of the food - not to dilute it or make it somehow taste different. 
+
+Most say wine should not be added to a dish just before serving.  The wine should simmer with the food, or sauce, to enhance the flavor of the dish. If added in late, it could have a strong overpowering flavor.  Also, use the rule of “you can always add more” before pouring it all on.  A wine needs time to develop its flavor in your dish.  Wait 10 minutes or more to taste before adding more wine.
+
+Keep in mind that not all of the alcohol will evaporate from the cooking process (alcohol boils away at 172° F , which is lower than  boiling water). The residual alcohol that remains in your dish depends on the length of time and way in which it was cooked. For example, boiling a sauce for 25 minutes will remove considerably more alcohol than merely baking a dish for 15 minutes.", lesson_id: 7)
+
+Quiz.create(lesson_id: 7)
+
+Question.create(quiz_id: 4, body: "What are the problems with cooking wine?")
+
+Answer.create(question_id: 7, body: "Too uncommon")
+Answer.create(question_id: 7, body: "Too expensive")
+Answer.create(question_id: 7, body: "Too dry")
+Answer.create(question_id: 7, body: "Sodium and additives", correct: true)
+
+Question.create(quiz_id: 4, body: "How much wine should I add?")
+
+Answer.create(question_id: 8, body: "as much as possible")
+Answer.create(question_id: 8, body: "enough to enhance the flavor", correct: true)
+Answer.create(question_id: 8, body: "as little as possible")
+Answer.create(question_id: 8, body: "doesn't matter")

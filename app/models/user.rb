@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :password, :username, :current_lesson_id
+  attr_accessible :password, :username, :current_lesson_id, :last_solved_quiz, :last_unlocked_lesson
   attr_reader :password
   
   has_many(

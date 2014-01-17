@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140114235259) do
+ActiveRecord::Schema.define(:version => 20140117035017) do
 
   create_table "answers", :force => true do |t|
     t.string   "body"
@@ -62,9 +62,11 @@ ActiveRecord::Schema.define(:version => 20140114235259) do
     t.string   "username"
     t.string   "password_digest"
     t.string   "session_token"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "current_lesson_id"
+    t.string   "last_solved_quiz"
+    t.string   "last_unlocked_lesson"
   end
 
 end

@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   # before_filter :require_current_user!, :only => [:destroy]
   
   def create
-    
+    p params
     user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
+      params[:username],
+      params[:password]
     )
     
     if user.nil?

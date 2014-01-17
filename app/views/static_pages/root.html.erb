@@ -22,29 +22,17 @@
       
       <ul>
         <form role="form" action="<%= session_url %>" method="post">
-          <div class="form-group">
             <input
               name="authenticity_token"
               type="hidden"
               value="<%= form_authenticity_token %>">
-          </div>
-          <div class="form-group">
-            <input 
-              id="user_username"
-              name="user[username]"
-              value="guest"
-              type="hidden">
-          </div>
-          <div class="form-group">
-            <input
-              id="user_password"
-              name="user[password]"
-              value="helloworld"
-              type="hidden">
-          </div>
-          <div class="log-in-as-guest-button">
-          <button type="submit" class="btn btn-success">Log In as Guest</button>
-          </div>
+            <label for="exampleInputEmail1" class="log-in-label">Email address</label>
+            <input name="username" type="username" class="form-control" id="exampleInputEmail1" placeholder="Enter username" value="guest">
+            <br>
+            <label for="exampleInputPassword1" class="log-in-label">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value="helloworld">
+            
+          <button type="submit" class="btn btn-success">Log In</button>
         </form>
       </ul>
       <% end %>
