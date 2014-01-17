@@ -38,9 +38,8 @@ Prototype.Views.ContentShow = Backbone.View.extend({
       alert("you need to unlock the other courses!")
     } else {
       if (passedQuiz) {
-      
-      
         Prototype.current_user.save({last_solved_quiz: $(event.currentTarget).attr("data-id").toString()})
+        
       
         var nextLesson = Prototype.courses.first().lessons().findWhere({id: (parseInt($(event.currentTarget).attr("data-id")) + 1)})
       
@@ -52,7 +51,7 @@ Prototype.Views.ContentShow = Backbone.View.extend({
         // if the lesson was not the last one
         else { 
           // if the user has passed all previous courses, add the next lesson and update the user's current_lesson_id
-        
+          
           // unlock the next lesson
           Prototype.current_user.save({current_lesson_id: nextLesson.id.toString()})
           Prototype.current_user.save({last_unlocked_lesson: nextLesson.id.toString()})
