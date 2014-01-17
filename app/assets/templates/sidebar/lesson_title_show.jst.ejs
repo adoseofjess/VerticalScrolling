@@ -12,17 +12,21 @@
   <% if (lesson.escape("locked") == "true") { %>
     <div class="sidebar-lesson-title" data-id="<%= lesson.id %>"><a href=""><%= lesson.escape("title") %></a></div> 
       
-      <% if (parseInt(Prototype.current_user.escape("last_unlocked_lesson")) < parseInt(lesson.get("id"))) { %>
-        <div class="lock"><i class="fa fa-lock"></i></div><br>
-      <% } else { %>
+      <% if (parseInt(Prototype.current_user.escape("last_unlocked_lesson")) >= parseInt(lesson.get("id"))) { %>
+        
+      
+      
         <div class="lock"><i class="fa fa-unlock"></i></div><br><br>
         <% lesson.sublessons().forEach(function(sublesson) { %>
           <div class="sidebar-sublesson-title" data-id="<%= sublesson.id %>"><%= sublesson.escape("title") %></div>
         <% }); %>
+      
+      
+      
+      <% } else { %>
+        <div class="lock"><i class="fa fa-lock"></i></div><br>
       <% } %>
        <br>
-       
-       
   <% } %>
     
 <% }); %>
